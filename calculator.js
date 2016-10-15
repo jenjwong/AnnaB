@@ -64,3 +64,29 @@ const clear = function() {
     keys[i].addEventListener('click', keyPress, false);
   }
 }())
+
+
+
+
+
+
+// const calculate = function() {
+//   let result = input[0];
+//   needsClear = true;
+//   for (var i = 1; i < input.length; i+=2) {
+//     if (input[i] == '-') {
+//       result = result - input[i+1];
+//     } else if (input[i] == '+') {
+//       console.log(typeof parseInt(result))
+//       result = parseInt(result) + parseInt(input[i+1]);
+//     } else if (input[i] == '*' || input[i] == 'x') {
+//       result = result * input[i+1];
+//     } else if (input[i] == '/') {
+//       result = result / input[i+1];
+//     } else {
+//       result = 'error'
+//     }
+//   }
+//   display.textContent = result;
+//   input = [];
+// }

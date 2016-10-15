@@ -1,21 +1,38 @@
 body {
   margin: 0;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 250%;
+  color: #2d4856;
+
+}
+
+.smText {
+  font-size: 30%;
+}
+
+.medText {
+  font-size: 50%;
+}
+
+.doubleKey {
+  padding: 0 30px 0 30px;
 }
 
 .calculatorBody {
   position: relative;
   margin: 10px auto 10px auto;
-  height: 600px;
+  height: 520px;
   width: 400px;
   background-color: gray;
   position: relative;
   border-radius: 10px;
+  box-shadow: 5px 5px 1px #888888;
 }
 
 .display {
   height: 50px;
   width: 300px;
-  background-color: white;
+  background-color: #e3ebef;
   display: block;
   margin: 50px auto 10px auto;
   position: absolute;
@@ -24,22 +41,39 @@ body {
   text-align: center;
   line-height: 40px;
   vertical-align: middle;
+  box-shadow: 4px 4px 1px #888888;
+  border-radius: 2px;
 }
 
 .numberPad {
-  height: 400px;
-  width: 150px;
-  background-color: pink;
+  text-align: center;
+  height: 330px;
+  width: 200px;
+  background-color: #cccdd1;
   position: absolute;
   margin: 150px 200px 20px 20px;
+  border-radius: 2px;
+}
+
+ul {
+	display: inline-block;
+	margin: auto;
+	padding: 0px;
+}
+
+li {
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .operatorPad {
-  height: 400px;
-  width: 110px;
-  background-color: pink;
+  text-align: center;
+  height: 330px;
+  width: 150px;
+  background-color: #cccdd1;
   position: absolute;
   margin: 150px 10px 40px 230px;
+  border-radius: 2px;
 }
 
 .input, .action {
@@ -48,12 +82,14 @@ body {
   margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
-  background-color: yellow;
+  background-color: #80C4DE;
+  box-shadow: 2px 2px 1px #888888;
   text-align: center;
   line-height: 47px;
   vertical-align: middle;
   position: relative;
   display: inline-block;
+  border-radius: 3px;
 }
 
 .calculate {

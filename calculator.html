@@ -2,12 +2,14 @@
 <head>
   <meta charset='utf-8'>
   <link rel='stylesheet' href='calculator.css'>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|VT323" rel="stylesheet">
 </head>
 <body>
   <div class='calculatorBody'>
     <div class='display'>
     </div>
-    <ul class='numberPad'>
+    <div class='numberPad'>
+    <ul>
       <li class='input 1'>
         1
       </li>
@@ -35,11 +37,17 @@
       <li class='input 9'>
         9
       </li>
-      <li class='input 0'>
+      <li class='input 0 doubleKey'>
         0
       </li>
+
+      <li class='input .'>
+        .
+      </li>
     </ul>
-    <ul class="operatorPad">
+  </div>
+  <div  class="operatorPad">
+    <ul>
       <li class='input operator +'>
         +
       </li>
@@ -58,13 +66,14 @@
       <li class='input operator )'>
         )
       </li>
-      <li class='action calculate'>
-        calculate
+      <li class='action calculate smText'>
+        cal
       </li>
-      <li class='action clear'>
+      <li class='action clear smText'>
         clear
       </li>
     </ul>
+  </div>
   </div>
   <script src="calculator.js"></script>
 </body>
