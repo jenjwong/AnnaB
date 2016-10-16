@@ -3,6 +3,23 @@ body {
   font-family: 'Bungee Shade', cursive;
   font-size: 250%;
   color: #2d4856;
+  background-image: url('hipsterDeer.jpg');
+  background-size: 100px;
+  background-repeat: repeat;
+}
+
+.title {
+  opacity: .93;
+  text-align: left;
+  font-family: 'Monofett', cursive;
+  font-size: 200%;
+  background-color: hsla(215, 96%, 100%, .5);
+}
+
+.copy {
+  font-size: 80%;
+  background-color: hsla(215, 96%, 100%, .7);
+  line-height: 1.7em;
 
 }
 
@@ -19,6 +36,7 @@ body {
 }
 
 .calculatorBody {
+  opacity: 0.95;
   position: relative;
   margin: 10px auto 10px auto;
   height: 520px;
@@ -39,7 +57,7 @@ body {
   left: 0;
   right: 0;
   text-align: center;
-  line-height: 40px;
+  line-height: 45px;
   vertical-align: middle;
   box-shadow: 4px 4px 1px #888888;
   border-radius: 2px;
