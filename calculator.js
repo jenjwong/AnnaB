@@ -3,6 +3,8 @@ class Input {
     this.value = '';
     this.history = [];
     this.wasCalc = false;
+    this['('] = 0;
+    this[')'] = 0;
   }
   update(val) {
     this.value += val;
@@ -15,9 +17,14 @@ class Input {
   clear() {
     this.value = '';
     this.history = [];
+    this.resetBracketCount();
   }
   storeHistory(node) {
     this.history.push(node);
+  }
+  resetBracketCount() {
+    this['('] = 0;
+    this[')'] = 0;
   }
 }
 
@@ -27,6 +34,7 @@ const input = new Input;
 const clear = function () {
   updateDisplay('');
   input.clear();
+  input.resetBracketCount();
 };
 
 const keyWasOperator = function(node) {
@@ -41,7 +49,7 @@ const keyWasOperator = function(node) {
 };
 
 const validInput = function () {
-  if (input.history.length < 2 || keyWasOperator()) {
+  if (input.history.length < 2 || keyWasOperator() || !validBrackets()) {
     displayError();
     return false;
   }
@@ -50,22 +58,89 @@ const validInput = function () {
 
 const updateDisplay = function (val) {
   const display = document.querySelector('.display');
-  display.textContent = '';
+
   display.textContent = val;
 };
 
+
+const displayError = function () {
+  updateDisplay('error');
+  setTimeout(function () {
+    input.clear();
+    updateDisplay('');
+  }, 2000);
+};
+
+const validBrackets = function(value) {
+  if (value === '(') {
+    input['('] += 1;
+  }
+  if (value === ')') {
+    input[')'] += 1;
+  }
+  return input['('] === input[')'];
+}
+
+const cloneNode = function(node, value) {
+  let nodeCopy = node.cloneNode()
+  nodeCopy.textContent = value;
+  return nodeCopy;
+}
+
+
+const handleBrackets = function(node, type) {
+  const bracket = node.textContent;
+  const lastKey = input.history[input.history.length-1];
+  const histLength = input.history.length;
+  let displayNode = node;
+  if ( histLength > 0 && bracket === '(' && !keyWasOperator(lastKey)) {
+    displayNode = cloneNode(node, '*(')
+  } else if (histLength > 0 && !keyWasOperator(node)) {
+    displayNode = cloneNode(node, '*' + node.textContent)
+  }
+    input.storeHistory(displayNode);
+    input.update(displayNode.textContent.trim());
+}
+
+const keyPressValidation = function(node) {
+  if (keyWasOperator(node) && input.history.length > 0 && keyWasOperator(input.history[input.history.length-1])) {
+    displayError()
+    return false
+  }
+  return true
+}
+
+
+
 const keyPress = function () {
-  if (input.wasCalc && !keyWasOperator(this)) {
+
+  if (!keyPressValidation(this)) {
+    return
+  }
+
+
+  if (input.wasCalc && !keyWasOperator(this) && this.textContent !== '(') {
     clear();
   }
-  input.storeHistory(this);
-  input.update(this.textContent.trim());
-  updateDisplay(input.value);
-  input.lastKey = this;
-  input.wasCalc = false;
+  if (this.textContent === '(' || this.textContent === ')') {
+    validBrackets(this.textContent);
+  }
+
+  if (this.textContent === '(' || input.history.length > 0 && input.history[input.history.length-1].textContent === ')') {
+    handleBrackets(this)
+  }  else {
+    input.storeHistory(this);
+    input.update(this.textContent.trim());
+  }
+    updateDisplay(input.value);
+    input.lastKey = this;
+    input.wasCalc = false;
+
+
 };
 
 const calculate = function () {
+  console.log(validBrackets())
   input.wasCalc = true;
   let result;
   if (!validInput()) {
@@ -77,13 +152,6 @@ const calculate = function () {
   updateDisplay(result);
 };
 
-const displayError = function () {
-  updateDisplay('error');
-  setTimeout(function () {
-    input.clear();
-    updateDisplay('');
-  }, 2000);
-};
 
 
 (function () {

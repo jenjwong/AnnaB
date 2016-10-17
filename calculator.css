@@ -1,10 +1,16 @@
+.wrapper {
+  width: 98%;
+  margin: 0 auto 0 auto;
+
+}
+
 body {
   margin: 0;
   font-family: 'Bungee Shade', cursive;
-  font-size: 250%;
+  font-size: 248%;
   color: #2d4856;
   background-image: url('hipsterDeer.jpg');
-  background-size: 100px;
+  background-size: 10%;
   background-repeat: repeat;
 }
 
@@ -20,6 +26,7 @@ body {
   font-size: 80%;
   background-color: hsla(215, 96%, 100%, .7);
   line-height: 1.7em;
+  width: 90%;
 
 }
 
@@ -47,8 +54,8 @@ body {
   box-shadow: 5px 5px 1px #888888;
 }
 
-.display {
-  height: 50px;
+.display-wrapper {
+  height: 48px;
   width: 300px;
   background-color: #e3ebef;
   display: block;
@@ -61,7 +68,19 @@ body {
   vertical-align: middle;
   box-shadow: 4px 4px 1px #888888;
   border-radius: 2px;
+  overflow: hidden;
+  /*letter-spacing: 10px;*/
 }
+
+.display {
+  width: 255px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+
 
 .numberPad {
   text-align: center;

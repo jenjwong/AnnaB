@@ -4,40 +4,44 @@
   <link rel='stylesheet' href='calculator.css'>
   <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|VT323" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Monofett" rel="stylesheet">
+  <meta name='viewport' content='width=device-width'>
 </head>
 <body>
-  <div class='calculatorBody'>
-    <div class='display'>
+  <div class='wrapper'>
+    <div class='calculatorBody'>
+      <div class='display-wrapper'>
+        <div class='display'></div>
+      </div>
+      <div class='numberPad'>
+        <ul>
+          <li class='input'>1</li>
+          <li class='input'>2</li>
+          <li class='input'>3</li>
+          <li class='input'>4</li>
+          <li class='input'>5</li>
+          <li class='input'>6</li>
+          <li class='input'>7</li>
+          <li class='input'>8</li>
+          <li class='input'>9</li>
+          <li class='input doubleKey'>0</li>
+          <li class='input'>.</li>
+        </ul>
+      </div>
+      <div  class="operatorPad">
+        <ul>
+          <li class='input operator'>+</li>
+          <li class='input operator'>-</li>
+          <li class='input operator'>*</li>
+          <li class='input operator'>/</li>
+          <li class='input '>(</li>
+          <li class='input '>)</li>
+          <li class='action calculate smText' id='calc'>calc</li>
+          <li class='action clear smText'>clear</li>
+        </ul>
+      </div>
     </div>
-    <div class='numberPad'>
-      <ul>
-        <li class='input'>1</li>
-        <li class='input'>2</li>
-        <li class='input'>3</li>
-        <li class='input'>4</li>
-        <li class='input'>5</li>
-        <li class='input'>6</li>
-        <li class='input'>7</li>
-        <li class='input'>8</li>
-        <li class='input'>9</li>
-        <li class='input doubleKey'>0</li>
-        <li class='input'>.</li>
-      </ul>
-    </div>
-    <div  class="operatorPad">
-      <ul>
-        <li class='input operator'>+</li>
-        <li class='input operator'>-</li>
-        <li class='input operator'>*</li>
-        <li class='input operator'>/</li>
-        <li class='input operator'>(</li>
-        <li class='input operator'>)</li>
-        <li class='action calculate smText' id='calc'>calc</li>
-        <li class='action clear smText'>clear</li>
-      </ul>
-    </div>
+    <div class='title'>Hipster~Calculator</div>
+    <div class='copy'>Finally, a tool to help hipsters count spokes on fixes, enumerate edison light-bulbs and fraction home-brew recipes with precision to make extra small batches of micro-micro brewed beer. Engineered with artisanal hand-crafted code and organic wifi.</div>
   </div>
-  <div class='title'>Hipster~Calculator</div>
-  <div class='copy'>Finally, a tool to help hipsters count spokes on fixes, enumerate edison light-bulbs and fraction home-brew recipes to make extra small batches of micro-micro brewed beer. Made with artisanal hand-crafted code and organic wifi.</div>
-  <script src="calculator.js"></script>
+    <script src="calculator.js"></script>
 </body>
