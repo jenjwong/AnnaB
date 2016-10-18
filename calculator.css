@@ -52,12 +52,14 @@ body {
   position: relative;
   border-radius: 10px;
   box-shadow: 5px 5px 1px #888888;
+  background-image: url('ebony.jpg');
+  background-size: cover;
 }
 
 .display-wrapper {
+  z-index: -1;
   height: 48px;
   width: 300px;
-  background-color: #e3ebef;
   display: block;
   margin: 50px auto 10px auto;
   position: absolute;
@@ -66,16 +68,19 @@ body {
   text-align: center;
   line-height: 45px;
   vertical-align: middle;
-  box-shadow: 4px 4px 1px #888888;
   border-radius: 2px;
-  overflow: hidden;
-  /*letter-spacing: 10px;*/
+  /*background-color: #e3ebef;*/
+  /*overflow: hidden;*/
+  /*box-shadow: 4px 4px 1px black;
+  /*letter-spacing: 5px*/
 }
 
 .display {
+  font-family: 'Amatic SC', cursive;
+  z-index: 1;
   width: 255px;
 
-  margin: 0 auto;
+  margin: -60px auto;
 
   overflow: hidden;
 }
@@ -86,10 +91,13 @@ body {
   text-align: center;
   height: 330px;
   width: 200px;
+  background-repeat: repeat;
+  background-image: url('maple.jpg');
+  background-size: cover;
   background-color: #cccdd1;
   position: absolute;
   margin: 150px 200px 20px 20px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 ul {
@@ -111,6 +119,8 @@ li {
   position: absolute;
   margin: 150px 10px 40px 230px;
   border-radius: 2px;
+  background-image: url('pink.jpg');
+  background-repeat: repeat;
 }
 
 .input, .action {
@@ -127,6 +137,11 @@ li {
   position: relative;
   display: inline-block;
   border-radius: 3px;
+}
+
+.input:active {
+  box-shadow: 2px 2px 1px #6fa5ba;
+  background-color: #77b6ce;
 }
 
 .calculate {

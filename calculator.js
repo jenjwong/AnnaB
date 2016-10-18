@@ -64,7 +64,10 @@ const updateDisplay = function (val) {
 
 
 const displayError = function () {
-  updateDisplay('error');
+  const message = ['math  :(', 'ooww snap!', 'more coffee?', 'not correct', 'sigh', 'incorrect', 'math  :('];
+  let random = Math.floor(Math.random() * message.length)
+
+  updateDisplay(message[random]);
   setTimeout(function () {
     input.clear();
     updateDisplay('');
