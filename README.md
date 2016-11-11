@@ -1,3 +1,3 @@
 
 
-https://jenjwong.github.io/css-js-calculator
+https://jenjwong.github.io/calculator
