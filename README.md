@@ -1,6 +1,6 @@
 
-https://jenjwong.github.io/calculator
+https://jenjwong.github.io/cssCalculator
 
 
-Calculator:
-![alt text]("https://github.com/jenjwong/calculator/blob/gh-pages/product.png")
+ -![alt text](https://github.com/jenjwong/calculator/blob/gh-pages/product.png "Calculator")
+
